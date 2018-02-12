@@ -1,11 +1,11 @@
-(function(storyContent) {
+(function() {
 
-    var story = new inkjs.Story(storyContent);
+    var story = new Story();
 
     var storyContainer = document.querySelectorAll('#story')[0];
 
     function showAfter(delay, el) {
-        setTimeout(function() { el.classList.add("show") }, delay);
+        setTimeout(function() { el.classList.add("show"); }, delay);
     }
 
     function scrollToBottom() {
@@ -54,7 +54,7 @@
             // Create paragraph with anchor element
             var choiceParagraphElement = document.createElement('p');
             choiceParagraphElement.classList.add("choice");
-            choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
+            choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
             storyContainer.appendChild(choiceParagraphElement);
 
             // Fade choice in after a short delay
@@ -88,4 +88,4 @@
 
     continueStory();
 
-})(storyContent);
+})();
