@@ -13,12 +13,14 @@ var Story = /** @class */ (function () {
     }
     Object.defineProperty(Story.prototype, "canContinue", {
         get: function () {
-            return false;
-            // this.lineIndex < this.lines.length;
+            return this.lineIndex < this.lines.length;
         },
         enumerable: true,
         configurable: true
     });
+    Story.prototype.Continue = function () {
+        return this.lines[this.lineIndex++];
+    };
     Story.prototype.ChooseChoiceIndex = function (index) {
     };
     return Story;

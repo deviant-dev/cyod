@@ -4,8 +4,11 @@ class Story {
     lines: string[];
 
     get canContinue() {
-        return false;
-        // this.lineIndex < this.lines.length;
+        return this.lineIndex < this.lines.length;
+    }
+
+    Continue() {
+        return this.lines[this.lineIndex++];
     }
 
     ChooseChoiceIndex(index) {
