@@ -1,5 +1,12 @@
 var Story = /** @class */ (function () {
     function Story() {
+        function reqListener() {
+            console.log(this.responseText);
+        }
+        var req = new XMLHttpRequest();
+        req.addEventListener("load", reqListener);
+        req.open("GET", "https://cyodeviation.tumblr.com/tagged/start/rss");
+        req.send();
         this.lines = [
             "This is line 1.",
             "This is line 2."
